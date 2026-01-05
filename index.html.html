@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BNU GYM Admin</title>
+<a href="C:\Users\hp\OneDrive\Desktop\project\index.html"></a>
+<a href="C:\Users\hp\OneDrive\Desktop\project\media"></a>
+<a href="C:\Users\hp\OneDrive\Desktop\project\marketing.html"></a>
+<a href="C:\Users\hp\OneDrive\Desktop\project\payment.html"></a>
+<a href="C:\Users\hp\OneDrive\Desktop\project\comments.html"></a>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#f1f5f9;}
+
+/* LOGIN */
+#loginPage{
+    height:100vh;display:flex;justify-content:center;align-items:center;
+    background:#1d3557;
+}
+.login-box{
+    background:white;padding:40px;width:360px;border-radius:12px;text-align:center;
+}
+.login-box h2{color:#1d3557;}
+
+.login-box input{width:100%;padding:12px;margin:10px 0;}
+
+.login-box button{
+    width:100%;padding:12px;background:#6d28d9;color:white;
+
+    border:none;border-radius:50px;font-size:1.1rem;cursor:pointer;
+}
+.login-box p{color:red;}
+#mainSite{display:none;}
+
+.sidebar{
+    position:fixed;top:0;left:0;width:230px;height:100vh;
+
+    background:#1f2933;color:white;padding-top:20px;
+}
+.sidebar h3{text-align:center;margin-bottom:20px;}
+
+.sidebar a{
+    display:block;padding:12px 20px;color:#d1d5db;
+
+    text-decoration:none;font-size:15px;
+}
+.sidebar a:hover{background:#111827;color:white;}
+
+/* CONTENT */
+.content{margin-left:230px;}
+
+/* HEADER */
+header{
+    background:#1d3557;color:white;padding:20px;text-align:center;
+
+    position:sticky;top:0;
+}
+
+/* PAGES */
+.page{display:none;padding:30px;}
+
+/* COMMON */
+.btn{
+    background:#6d28d9;color:white;border:none;
+
+    padding:10px 16px;border-radius:6px;cursor:pointer;
+}
+.btn.outline{background:white;color:#6d28d9;border:2px solid #6d28d9;}
+
+.btn.small{padding:8px 12px;}
+
+/* NOTICE */
+.notice{
+    background:white;padding:20px;border-left:6px solid #6d28d9;
+    border-radius:8px;margin-bottom:25px;
+}
+
+/* DASHBOARD */
+.dashboard-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+.card{background:white;padding:20px;border-radius:10px;}
+
+.card input,.card textarea{width:100%;margin:10px 0;padding:10px;}
+
+.green{color:green;font-weight:bold;}
+</style>
+</head>
+<body>
+<div id="loginPage">
+    <div class="login-box">
+        <h2>BNU GYM Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="error"></p>
+    </div>
+</div>
+<div id="mainSite">
+<div class="sidebar">
+    <h3>Hostinger</h3>
+    <a href="#" onclick="showPage('dashboardPage')">Dashboard</a>
+    <a href="#" onclick="showPage('membershipPage')">Membership Plans</a>
+   <a href="#" onclick="showPage('trainersPage')">Trainers</a>
+    <a href="#" onclick="showPage('analyticsPage')">Analytics</a>
+    <a href="#" onclick="showPage('commentsPage')">Comments</a>
+    <a href="#" onclick="showPage('mediaPage')">Media</a>
+    <a href="#" onclick="showPage('marketingPage')">Marketing</a>
+ <a href="#" onclick="showPage('paymentsPage')">Payments</a>
+    
+</div>
+
+<div class="content">
+<header><h1>BNU GYM Admin Panel</h1></header>
+<div id="dashboardPage" class="page">
+
+    <div class="notice">
+        <h3>Connect Hostinger Reach</h3>
+        <p style="margin:10px 0;color:#555;">
+            Start email marketing and manage subscribers easily.
+        </p>
+        <button class="btn">Connect</button>
+        <button class="btn outline">Learn more</button>
+    </div>
+<div class="dashboard-grid">
+        <div class="card">
+            <h4>Site Health</h4>
+            <p class="green">Good ✔</p>
+        </div>
+        <div class="card">
+            <h4>Quick Draft</h4>
+            <input type="text" placeholder="Title">
+            <textarea placeholder="What’s on your mind?"></textarea>
+            <button class="btn small">Save Draft</button>
+        </div>
+
+        <div class="card">
+            <h4>At a Glance</h4>
+            <p> Pages: 13</p>
+            <p>Posts: 1</p>
+            <p> Comments: 2</p>
+        </div>
+    </div>
+</div>
+<div id="membershipPage" class="page">
+    <h2>Membership Plans</h2>
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+            <h3>Basic Plan</h3>
+            <p> Price: $20 / Month</p>
+            <p> Gym Access</p>
+            <p>✔Cardio Area</p>
+            <button class="btn small">Activate</button>
+        </div>
+
+        <div class="card">
+            <h3>Standard Plan</h3>
+            <p>💰 Price: $40 / Month</p>
+            <p>✔ Gym + Cardio</p>
+            <p>✔ Group Classes</p>
+            <button class="btn small">Activate</button>
+        </div>
+
+        <div class="card">
+            <h3>Premium Plan</h3>
+            <p>💰 Price: $70 / Month</p>
+            <p>✔ All Facilities</p>
+            <p>✔ Personal Trainer</p>
+            <button class="btn small">Activate</button>
+        </div>
+
+    </div>
+</div>
+<div id="trainersPage" class="page">
+    <h2>Gym Trainers</h2>
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+            <h3>Ali Khan</h3>
+            <p>🏋️ Strength Trainer</p>
+            <p>Experience: 5 Years</p>
+            <button class="btn small">View Profile</button>
+        </div>
+
+        <div class="card">
+            <h3>Sara Ahmed</h3>
+            <p>🧘 Yoga Instructor</p>
+            <p>Experience: 4 Years</p>
+            <button class="btn small">View Profile</button>
+        </div>
+
+        <div class="card">
+            <h3>Usman Raza</h3>
+            <p>🤸 Fitness Coach</p>
+            <p>Experience: 6 Years</p>
+            <button class="btn small">View Profile</button>
+        </div>
+
+    </div>
+</div>
+<div id="analyticsPage" class="page">
+    <h2>Analytics</h2>
+    <div class="dashboard-grid">
+        <div class="card"><h4>Visitors</h4><p style="font-size:26px;">1,245</p></div>
+        <div class="card"><h4>Page Views</h4><p style="font-size:26px;">3,980</p></div>
+        <div class="card"><h4>New Members</h4><p style="font-size:26px;">87</p></div>
+    </div>
+</div>
+<div id="commentsPage" class="page">
+    <h2>Comments</h2>
+
+    <div class="card">
+        <p><strong>Ali:</strong> Amazing gym 💪</p>
+        <button class="btn small">Approve</button>
+        <button class="btn small outline">Delete</button>
+    </div>
+
+    <div class="card" style="margin-top:15px;">
+        <p><strong>Sara:</strong> Trainers are very professional</p>
+        <button class="btn small">Approve</button>
+        <button class="btn small outline">Delete</button>
+    </div>
+</div>
+<div id="marketingPage" class="page">
+    <h2>Marketing</h2>
+    <div class="dashboard-grid">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Marketing Channels</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page h2 {
+            text-align: center;
+            color: #ff4d4d; 
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .channel span {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn.small {
+            background-color: #ff4d4d;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .btn.small:hover {
+            background-color: #e63939;
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            .card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn {
+                margin-top: 10px;
+                width: 100%;
+                text-align: center;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="marketingPage" class="page">
+    <h2>Marketing Channels</h2>
+    <div class="card channel">
+        <span>Google for WooCommerce</span>
+        <button class="btn small" onclick="install(this)">Install</button>
+        <span class="status">Not Installed</span>
+    </div>
+    <div class="card channel">
+        <span>Pinterest for WooCommerce</span>
+        <button class="btn small" onclick="install(this)">Install</button>
+        <span class="status">Not Installed</span>
+    </div>
+    <div class="card channel">
+        <span>TikTok for WooCommerce</span>
+        <button class="btn small" onclick="install(this)">Install</button>
+        <span class="status">Not Installed</span>
+    </div>
+    <div class="card channel">
+        <span>Facebook for WooCommerce</span>
+        <button class="btn small" onclick="install(this)">Install</button>
+        <span class="status">Not Installed</span>
+    </div>
+    <p id="installedCount" style="margin-top:15px;font-weight:bold;">Installed Channels: 0</p>
+</div>
+
+        <div class="card channel">
+            <span>Pinterest for BNU GYM </span>
+            <button class="btn small">Install</button>
+        </div>
+
+        <div class="card channel">
+            <span>TikTok for BNU GYM</span>
+            <button class="btn small">Install</button>
+        </div>
+
+        <div class="card channel">
+            <span>Facebook for BNU GYM</span>
+            <button class="btn small">Install</button>
+        </div>
+    </div>
+ </div>
+</div>
+<div id="mediaPage" class="page">
+    <h2>Media Library</h2>
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+            <img src="C:\Users\hp\Downloads\gym training.png" height="400"width="400"class="media-img" alt="Gym Training">
+            <p>Gym Training</p>
+            <button class="btn small outline">Delete</button>
+        </div>
+
+        <div class="card">
+            <img src="C:\Users\hp\Downloads\work out area.png"height="400"width="400" class="media-img" alt="Workout Area">
+            <p>Workout Area</p>
+            <button class="btn small outline">Delete</button>
+        </div>
+
+        <div class="card">
+            <img src="C:\Users\hp\Downloads\cardio zone.png"height="400"width="400" class="media-img" alt="Cardio Zone">
+            <p>Cardio Zone</p>
+            <button class="btn small outline">Delete</button>
+        </div>
+
+        <div class="card">
+            <img src="C:\Users\hp\Downloads\weight area.png"width="400"height="400" class="media-img" alt="Weight Section">
+            <p>Weight Section</p>
+            <button class="btn small outline">Delete</button>
+        </div>
+
+    </div>
+</div>
+<div id="mediaPage" class="page">
+    <h2>Media Library</h2>
+    <div class="card">
+        <input type="file" id="mediaFile">
+        <button class="btn small" onclick="uploadMedia()">Upload</button>
+    </div>
+    <h3>Uploaded Media</h3>
+    <ul id="mediaList" style="list-style:none;padding:0;"></ul>
+</div>
+<div id="paymentsPage" class="page">
+    <h2>Payments</h2>
+    <div class="card">
+        <input type="text" id="paymentName" placeholder="Customer Name">
+        <input type="number" id="paymentAmount" placeholder="Amount">
+        <button class="btn small" onclick="addPayment()">Add Payment</button>
+    </div>
+    <h3>Payment History</h3>
+    <table id="paymentTable" border="1" style="width:100%;border-collapse:collapse;">
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+        </tr>
+    </table>
+    <p id="totalRevenue" style="font-weight:bold;margin-top:10px;">Total Revenue: $0</p>
+</div>
+    
+
+<script>
+function showPage(id){
+    document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+    document.getElementById(id).style.display='block';
+}
+function login(){
+    if(email.value==="admin@gym.com" && password.value==="1234"){
+        loginPage.style.display="none";
+        mainSite.style.display="block";
+        showPage('dashboardPage');
+    }else{
+        error.innerText="Invalid Login Details!";
+    }
+}
+</script>
+
+</body>
+</html>
